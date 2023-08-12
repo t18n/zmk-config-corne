@@ -9,9 +9,14 @@
 #define RAISE    2
 #define SYSTEM   3
 
-&led_strip {
-    chain-length = <27>;
+// &led_strip {
+//     chain-length = <27>;
     // 21 backlight + 6 glowlight
+// };
+
+&led_strip {
+    chain-length = <9>;
+    // 7 backlight + 2 glowlight
 };
 
 / {
