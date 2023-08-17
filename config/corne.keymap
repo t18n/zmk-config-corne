@@ -9,6 +9,8 @@
 #define MATH   3
 #define SYSTEM   4
 
+// dt-formatter: indent = "  "
+// dt-formatter: reindentMultilineIntegerCells = "dedent"
 
 &led_strip {
     chain-length = <27>;
@@ -128,7 +130,7 @@
                 &tog 0  &tog 1  &tog 2  &tog 3  &tog 4  &trans        &kp KP_PLUS     &kp KP_MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9        &trans
                 &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_MULTIPLY    &kp KP_DIVIDE  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6        &trans
                 &trans  &trans  &trans  &trans  &trans  &trans             &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
-                        &kp LCTRL  &kp LEFT_ALT  &kp LGUI             &SPACE           &trans           &trans
+                        &kp LCTRL  &kp LEFT_ALT  &kp LGUI             &kp SPACE           &trans           &trans
             >;
         };
 
