@@ -6,21 +6,18 @@
 #define DEFAULT  0
 #define LOWER    1
 #define RAISE    2
-#define MATH   3
-#define SYSTEM   4
+#define CONTROL   3
 
 // dt-formatter: indent = "  "
 // dt-formatter: reindentMultilineIntegerCells = "dedent"
 
 &led_strip {
-    chain-length = <27>;
+  chain-length = <27>;
 
-    // 21 backlight + 6 glowlight
+  // 21 backlight + 6 glowlight
 };
 
-
 / {
-
   behaviors {
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
@@ -35,113 +32,99 @@
     };
   };
 
-
   combos {
     compatible = "zmk,combos";
 
-    tab {
-      bindings = <&trans>;
-      key-positions = <2 3>;
-    };
-
-    ctrl {
-      bindings = <&kp LCTRL>;
-      key-positions = <26 27>;
-    };
-
-    cmd {
-      bindings = <&kp LCMD>;
-      key-positions = <37 38>;
-    };
-
-    alt {
-      bindings = <&kp LEFT_ALT>;
-      key-positions = <39 40>;
-    };
-
-    shift {
-      bindings = <&kp LSHIFT>;
-      key-positions = <8 9>;
-    };
-
-    caps_word {
+    Capslock {
       bindings = <&caps_word>;
       key-positions = <17 18>;
     };
 
-    delete {
-      bindings = <&kp DEL>;
+    Backspace {
+      bindings = <&kp BACKSPACE>;
       key-positions = <32 33>;
     };
-  };
 
-          macros {
-    zed_em_kay: zed_em_kay {
-      compatible = "zmk,behavior-macro";
-      label = "ZM_zed_em_kay";
-      #binding-cells = <0>;
-      bindings =
-        <&macro_press>,
-        <&kp LSHFT>,
-        <&macro_tap>,
-        <&kp Z &kp M &kp K>,
-        <&macro_release>,
-        <&kp LSHFT>;
+    Screenshot {
+      bindings = <&kp LS(LG(N4))>;
+      key-positions = <3 4>;
+    };
+
+    Fullzoom_Window {
+      bindings = <&kp LS(LC(LG(ENTER)))>;
+      key-positions = <1 2>;
+    };
+
+    Switch_Window {
+      bindings = <&kp LG(GRAVE)>;
+      key-positions = <25 26>;
+    };
+
+    Switch_Input_Source {
+      bindings = <&kp LC(LA(SPACE))>;
+      key-positions = <11 10>;
+    };
+
+    Pg_Up {
+      bindings = <&kp PAGE_UP>;
+      key-positions = <1 13>;
+    };
+
+    Pg_Down {
+      bindings = <&kp PAGE_DOWN>;
+      key-positions = <13 25>;
+    };
+
+    Space {
+      bindings = <&kp SPACE>;
+      key-positions = <28 29>;
     };
   };
 
-    keymap {
-        compatible = "zmk,keymap";
+  macros {
+  };
 
+  keymap {
+    compatible = "zmk,keymap";
 
-        default_layer {
-            label = "BASE";
-            bindings = <
-                &kp ESC  &kp Q  &kp W      &kp E         &kp R     &kp T        &kp Y  &kp U      &kp I    &kp O     &kp P  &kp BSPC
-                &kp TAB  &kp A  &kp S      &kp D         &kp F     &kp G        &kp H  &kp J      &kp K    &kp L  &kp SEMI   &kp SQT
-                &kp LSHFT  &kp Z  &kp X      &kp C         &kp V     &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH   &kp RET
-                &kp LCTRL  &kp LEFT_ALT  &kp LGUI    &kp SPACE  &mo 1      &mo 2
-            >;
-        };
-
-        lower_layer {
-            label = "LOWER";
-            bindings = <
-                &tog 0  &kp N1  &kp N2    &kp N3  &kp N4     &kp N5      &kp N6    &kp N7    &kp N8     &kp N9  &kp N0   &kp BSPC
-                &kp LSHFT  &trans  &trans    &trans  &trans     &trans    &kp LEFT  &kp DOWN    &kp UP  &kp RIGHT  &trans     &trans
-                &kp LCTRL  &kp F1  &kp F2    &kp F3  &kp F4     &kp F5      &trans    &trans    &trans     &trans  &trans  &kp ENTER
-                           &kp LCTRL  &kp LEFT_ALT  &kp LGUI     &kp SPACE     &mo 3  &mo 4
-            >;
-        };
-
-        raise_layer {
-            label = "RAISE";
-            bindings = <
-                &tog 0  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp BSPC
-                &kp LSHFT    &trans  &trans    &trans    &trans     &trans    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-                &kp LCTRL    &trans  &trans    &trans    &trans     &trans    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LCTRL  &kp LEFT_ALT  &kp LGUI      &kp SPACE     &mo 3  &mo 4
-            >;
-        };
-
-        layer_4 {
-            label = "MATH";
-            bindings = <
-                &tog 0  &tog 1  &tog 2  &tog 3  &tog 4  &trans        &kp KP_PLUS     &kp KP_MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9        &trans
-                &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_MULTIPLY    &kp KP_DIVIDE  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6        &trans
-                &trans  &trans  &trans  &trans  &trans  &trans             &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
-                        &kp LCTRL  &kp LEFT_ALT  &kp LGUI             &kp SPACE           &trans           &trans
-            >;
-        };
-
-        system_layer {
-            label = "SYSTEM";
-            bindings = <
-                &tog 0      &tog 1  &tog 2  &tog 3  &tog 4  &trans           &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4           &trans           &trans           &trans           &trans           &trans           &trans
-                &kp LCTRL  &kp C_PREV    &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP      &kp C_PP             &trans           &trans           &trans           &trans           &trans            &kp ENTER
-                                         &kp LCTRL  &kp LEFT_ALT  &kp LGUI            &kp SPACE           &trans           &trans
-            >;
-        };
+    default_layer {
+      label = "BASE";
+      bindings = <
+&kp TAB    &kp Q  &kp W  &kp E         &kp R     &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P     &kp ESC
+&kp LSHFT  &kp A  &kp S  &kp D         &kp F     &kp G       &kp H      &kp J    &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C         &kp V     &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH  &mo 2
+                         &kp LEFT_ALT  &kp LGUI  &kp BSPC    &kp SPACE  &kp RET  &mo 1
+      >;
     };
+
+    lower_layer {
+      label = "LOWER";
+      bindings = <
+&trans     &kp N1     &kp N2     &kp N3        &kp N4            &kp N5           &kp N6     &kp N7     &kp N8  &kp N9     &kp N0   &trans
+&kp LSHFT  &kp ASTRK  &kp SLASH  &kp PLUS      &kp MINUS         &kp EQUAL        &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &trans   &trans
+&kp LCTRL  &kp F1     &kp F2     &kp F3        &kp F4            &kp F5           &kp F6     &kp F7     &kp F8  &kp F9     &kp F10  &trans
+                                 &kp LEFT_ALT  &kp LEFT_COMMAND  &kp BACKSPACE    &kp SPACE  &kp ENTER  &trans
+      >;
+    };
+
+    raise_layer {
+      label = "RAISE";
+      bindings = <
+&tog 0     &kp EXCL        &kp AT           &kp HASH      &kp DLLR          &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LSHFT  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE      &trans            &trans           &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT  &kp BSLH  &kp DOUBLE_QUOTES
+&kp LCTRL  &kp GRAVE       &kp TILDE        &trans        &trans            &trans           &trans     &trans     &trans        &trans    &trans    &trans
+                                            &kp LEFT_ALT  &kp LEFT_COMMAND  &kp BACKSPACE    &kp SPACE  &kp ENTER  &trans
+      >;
+    };
+
+    control_layer {
+      label = "CONTROL";
+      bindings = <
+&bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3          &bt BT_SEL 4          &bt BT_CLR      &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+&trans            &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans          &trans           &trans           &trans           &trans           &trans           &trans
+&kp C_PLAY_PAUSE  &kp C_PREV       &kp C_NEXT       &kp K_MUTE            &kp C_VOL_DN          &kp C_VOL_UP    &trans           &trans           &trans           &trans           &trans           &trans
+                                                    &trans                &trans                &trans          &kp SPACE        &trans           &trans
+      >;
+    };
+  };
 };
