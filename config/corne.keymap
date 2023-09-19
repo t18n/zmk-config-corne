@@ -40,11 +40,6 @@
       key-positions = <17 18>;
     };
 
-    Backspace {
-      bindings = <&kp BACKSPACE>;
-      key-positions = <32 33>;
-    };
-
     Screenshot {
       bindings = <&kp LS(LG(N4))>;
       key-positions = <3 4>;
@@ -65,19 +60,29 @@
       key-positions = <11 10>;
     };
 
-    Pg_Up {
-      bindings = <&kp PAGE_UP>;
-      key-positions = <1 13>;
-    };
-
-    Pg_Down {
-      bindings = <&kp PAGE_DOWN>;
-      key-positions = <13 25>;
-    };
-
     Space {
       bindings = <&kp SPACE>;
       key-positions = <28 29>;
+    };
+
+    To_Layer1 {
+      bindings = <&to 0>;
+      key-positions = <0 1>;
+    };
+
+    To_Layer2 {
+      bindings = <&to 1>;
+      key-positions = <0 2>;
+    };
+
+    To_Layer3 {
+      bindings = <&to 2>;
+      key-positions = <0 3>;
+    };
+
+    To_Layer4 {
+      bindings = <&to 4>;
+      key-positions = <0 3>;
     };
   };
 
@@ -110,7 +115,7 @@
     raise_layer {
       label = "RAISE";
       bindings = <
-&tog 0     &kp EXCL        &kp AT           &kp HASH      &kp DLLR          &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans     &kp EXCL        &kp AT           &kp HASH      &kp DLLR          &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
 &kp LSHFT  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE      &trans            &trans           &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT  &kp BSLH  &kp DOUBLE_QUOTES
 &kp LCTRL  &kp GRAVE       &kp TILDE        &trans        &trans            &trans           &trans     &trans     &trans        &trans    &trans    &trans
                                             &kp LEFT_ALT  &kp LEFT_COMMAND  &kp BACKSPACE    &kp SPACE  &kp ENTER  &trans
