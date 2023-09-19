@@ -81,7 +81,7 @@
     };
 
     To_Layer4 {
-      bindings = <&to 4>;
+      bindings = <&to 3>;
       key-positions = <0 3>;
     };
   };
