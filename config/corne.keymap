@@ -42,7 +42,7 @@
 
     Screenshot {
       bindings = <&kp LS(LG(N4))>;
-      key-positions = <3 4>;
+      key-positions = <3 12 36>;
     };
 
     Fullzoom_Window {
@@ -60,14 +60,19 @@
       key-positions = <11 10>;
     };
 
-    Space {
+    Key_Space {
       bindings = <&kp SPACE>;
       key-positions = <28 29>;
     };
 
-    Enter {
+    Key_Enter {
       bindings = <&kp ENTER>;
       key-positions = <16 17>;
+    };
+
+    Key_Alt {
+      bindings = <&kp LEFT_ALT>;
+      key-positions = <36 37>;
     };
 
     To_Layer1 {
