@@ -3,7 +3,7 @@ layers:
   BASE: [TAB, Q, W, E, R, T, Y, U, I, O, P, ESCAPE, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL, Z, X, C, V, B, N, M, ',', ., /, LEFT ALT, LGUI, CODE, BSPC,
     SPACE, EXT, RET]
   EXT:
-  - {t: ▽, type: trans}
+  - EXT
   - '1'
   - '2'
   - '3'
@@ -27,25 +27,6 @@ layers:
   - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - \
-  - LGUI
-  - {t: ▽, type: trans}
-  - BSPC
-  - SPACE
-  - {type: held}
-  - ENTER
-  CODE:
   - {t: ▽, type: trans}
   - F1
   - F2
@@ -58,6 +39,25 @@ layers:
   - F9
   - F10
   - {t: ▽, type: trans}
+  - LGUI
+  - {t: ▽, type: trans}
+  - BSPC
+  - SPACE
+  - {type: held}
+  - ENTER
+  CODE:
+  - {t: ▽, type: trans}
+  - \
+  - '|'
+  - {t: ▽, type: trans}
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - CODE
   - LSHFT
   - +
   - '-'
@@ -65,14 +65,14 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - PG UP
+  - PAGE DOWN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LCTRL
   - '`'
-  - '|'
+  - '~'
   - '='
   - '{'
   - '}'
