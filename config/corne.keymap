@@ -119,7 +119,7 @@
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI       &rgb_ug RGB_EFF       &trans
 &trans  &trans        &td_media     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans
 &trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7           &kp F8           &kp F9                &kp F10               &kp F12
-                                    &trans        &trans        &trans          &trans           &trans
+                                    &trans        &trans        &trans          &trans           &trans           &trans
       >;
     };
   };
