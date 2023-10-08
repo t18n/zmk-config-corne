@@ -13,8 +13,8 @@
 };
 
 &mt {
-  tapping-term-ms = <201>;
-  flavor = "tap-preferred";
+  tapping-term-ms = <150>;
+  flavor = "balanced";
 };
 
 &sk {
