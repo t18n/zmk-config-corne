@@ -22,6 +22,9 @@
   quick-release;
 };
 
+
+#define TAPPING_TERM 200
+
 / {
   behaviors {
     /*
@@ -30,7 +33,6 @@
     *  - tap twice for next track
     *  - tap three times for previous track
     */
-
     td_media: tap_dance_media {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_MEDIA";
