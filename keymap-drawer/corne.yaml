@@ -55,8 +55,8 @@ layers:
   - '8'
   - '9'
   - '0'
-  - SCROLL UP
   - {t: ▽, type: trans}
+  - CAPS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -67,18 +67,18 @@ layers:
   - UP
   - RIGHT
   - {t: ▽, type: trans}
-  - SCROLL DOWN
   - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
-  - {t: F5, type: held}
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -98,7 +98,7 @@ layers:
   - '*'
   - (
   - )
-  - PAGE UP
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '['
@@ -110,7 +110,7 @@ layers:
   - LA(UP)
   - LA(RIGHT)
   - {t: ▽, type: trans}
-  - PAGE DOWN
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - UNDO
   - CUT
@@ -141,7 +141,7 @@ layers:
   - RGB SPD
   - RGB SPI
   - RGB EFF
-  - PG UP
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&td_media'
@@ -153,18 +153,18 @@ layers:
   - RGB BRI
   - BRIGHTNESS DEC
   - BRIGHTNESS INC
-  - PAGE DOWN
-  - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: F1, type: held}
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -172,13 +172,5 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [17, 18]
-  k: '&caps_word'
-- p: [3, 12, 36]
-  k: LS(LG(4))
-- p: [1, 2]
-  k: LS(LC(LG(ENTER)))
-- p: [11, 10]
-  k: LC(LA(SPACE))
 - p: [0, 38, 5]
   k: BT CLR
