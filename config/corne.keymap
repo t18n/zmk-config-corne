@@ -22,7 +22,6 @@
   quick-release;
 };
 
-
 #define TAPPING_TERM 200
 
 / {
@@ -33,6 +32,7 @@
     *  - tap twice for next track
     *  - tap three times for previous track
     */
+
     td_media: tap_dance_media {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_MEDIA";
@@ -58,26 +58,6 @@
 
   combos {
     compatible = "zmk,combos";
-
-    Capslock {
-      bindings = <&caps_word>;
-      key-positions = <17 18>;
-    };
-
-    Screenshot {
-      bindings = <&kp LS(LG(N4))>;
-      key-positions = <3 12 36>;
-    };
-
-    Fullzoom_Window {
-      bindings = <&kp LS(LC(LG(ENTER)))>;
-      key-positions = <1 2>;
-    };
-
-    Switch_Input_Source {
-      bindings = <&kp LC(LA(SPACE))>;
-      key-positions = <11 10>;
-    };
 
     Clear_BLE_Profile {
       bindings = <&bt BT_CLR>;
@@ -116,18 +96,18 @@
     num_layer {
       label = "NUMBER";
       bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0   &kp K_SCROLL_UP
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans   &kp K_SCROLL_DOWN
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6    &kp F7    &kp F8  &kp F9     &kp F10  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
+&trans    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &trans
+&kp CAPS  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans    &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+                          &trans  &trans  &trans    &trans    &trans     &trans
       >;
     };
 
     code_layer {
       label = "CODE";
       bindings = <
-&trans  &kp EXCL    &kp AT            &kp HASH           &kp DLLR        &kp PRCNT          &kp CARET     &kp AMPS      &kp ASTERISK  &kp LPAR       &kp RPAR  &kp PAGE_UP
-&trans  &trans      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)    &kp LA(RIGHT)  &trans    &kp PAGE_DOWN
+&trans  &kp EXCL    &kp AT            &kp HASH           &kp DLLR        &kp PRCNT          &kp CARET     &kp AMPS      &kp ASTERISK  &kp LPAR       &kp RPAR  &trans
+&trans  &trans      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)    &kp LA(RIGHT)  &trans    &trans
 &trans  &kp K_UNDO  &kp K_CUT         &kp K_COPY         &kp K_PASTE     &kp K_REDO         &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)    &kp LG(RIGHT)  &trans    &trans
                                       &trans             &trans          &kp DELETE         &trans        &trans        &trans
       >;
@@ -136,9 +116,9 @@
     media_layer {
       label = "MEDIA";
       bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI       &rgb_ug RGB_EFF       &kp PG_UP
-&trans  &trans        &td_media     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp PAGE_DOWN
-&trans  &trans        &trans        &trans        &trans        &trans          &trans           &trans           &trans           &trans                &trans                &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI       &rgb_ug RGB_EFF       &trans
+&trans  &trans        &td_media     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7           &kp F8           &kp F9                &kp F10               &trans
                                     &trans        &trans        &trans          &trans           &trans
       >;
     };
