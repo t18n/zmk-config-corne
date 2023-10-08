@@ -1,9 +1,50 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
-  BASE: [TAB, Q, W, E, R, T, Y, U, I, O, P, ESCAPE, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL, Z, X, C, V, B, N, M, ',', ., /, LEFT ALT, LGUI, CODE, BSPC,
-    SPACE, EXT, RET]
-  EXT:
-  - EXT
+  BASE:
+  - {t: ESCAPE, h: LEFT ALT}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: '-', h: RIGHT ALT}
+  - {t: TAB, h: LSHFT}
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - {t: '''', h: RIGHT SHIFT}
+  - {t: '`', h: LCTRL}
+  - {t: Z, h: MEDIA}
+  - X
+  - C
+  - V
+  - {t: B, h: NUMBER}
+  - {t: N, h: CODE}
+  - M
+  - ','
+  - .
+  - {t: /, h: MEDIA}
+  - {t: \, h: RCTRL}
+  - {t: ENTER, h: LEFT GUI}
+  - {t: SPACE, h: CODE}
+  - BSPC
+  - {t: SPACE, h: LC(LS(LALT))}
+  - {t: '=', h: NUMBER}
+  - {t: ENTER, h: RIGHT GUI}
+  NUMBER:
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -14,8 +55,8 @@ layers:
   - '8'
   - '9'
   - '0'
+  - SCROLL UP
   - {t: ▽, type: trans}
-  - LSHFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -26,99 +67,98 @@ layers:
   - UP
   - RIGHT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - SCROLL DOWN
   - {t: ▽, type: trans}
   - F1
   - F2
   - F3
   - F4
-  - F5
+  - {t: F5, type: held}
   - F6
   - F7
   - F8
   - F9
   - F10
   - {t: ▽, type: trans}
-  - LGUI
   - {t: ▽, type: trans}
-  - BSPC
-  - SPACE
-  - {type: held}
-  - ENTER
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   CODE:
   - {t: ▽, type: trans}
-  - \
-  - '|'
-  - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
   - (
   - )
+  - PAGE UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - CODE
-  - LSHFT
-  - +
-  - '-'
-  - _
   - '['
   - ']'
-  - {t: ▽, type: trans}
-  - PG UP
-  - PAGE DOWN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LCTRL
-  - '`'
-  - '~'
-  - '='
   - '{'
   - '}'
+  - LA(LEFT)
+  - LA(DOWN)
+  - LA(UP)
+  - LA(RIGHT)
+  - {t: ▽, type: trans}
+  - PAGE DOWN
+  - {t: ▽, type: trans}
+  - UNDO
+  - CUT
+  - COPY
+  - PASTE
+  - REDO
+  - {t: LG(LEFT), type: held}
+  - LG(DOWN)
+  - LG(UP)
+  - LG(RIGHT)
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT ALT
-  - {t: LEFT COMMAND, type: held}
-  - BACKSPACE
-  - SPACE
   - {t: ▽, type: trans}
-  - ENTER
-  CONTROL:
+  MEDIA:
+  - {t: ▽, type: trans}
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
-  - {t: ▽, type: trans}
   - RGB HUD
-  - {t: RGB HUI, type: held}
+  - RGB HUI
   - RGB SPD
   - RGB SPI
   - RGB EFF
-  - {t: RGB TOG, type: held}
+  - PG UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&td_media'
+  - MUTE
+  - VOL DN
+  - VOL UP
+  - RGB TOG
   - RGB BRD
   - RGB BRI
   - BRIGHTNESS DEC
   - BRIGHTNESS INC
+  - PAGE DOWN
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - PLAY PAUSE
-  - PREV
-  - NEXT
-  - MUTE
-  - VOL DN
-  - VOL UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -138,25 +178,7 @@ combos:
   k: LS(LG(4))
 - p: [1, 2]
   k: LS(LC(LG(ENTER)))
-- p: [25, 26]
-  k: LG(GRAVE)
 - p: [11, 10]
   k: LC(LA(SPACE))
-- p: [28, 29]
-  k: SPACE
-- p: [16, 17]
-  k: ENTER
-- p: [36, 37]
-  k: LEFT ALT
-- p: [0, 1]
-  k: BASE
-- p: [0, 2]
-  k: EXT
-- p: [0, 3]
-  k: CODE
-- p: [0, 4]
-  k: CONTROL
-- p: [11, 7]
-  k: CONTROL
 - p: [0, 38, 5]
   k: BT CLR
