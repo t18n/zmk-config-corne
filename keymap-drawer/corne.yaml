@@ -37,7 +37,7 @@ layers:
   - .
   - {t: /, h: EXT}
   - {t: \, h: RCTRL}
-  - {t: ENTER, h: LEFT GUI}
+  - LEFT GUI
   - {t: SPACE, h: CODE}
   - BSPC
   - {t: SPACE, h: LC(LS(LALT))}
@@ -101,10 +101,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '['
-  - ']'
   - '{'
   - '}'
+  - '['
+  - ']'
   - LA(LEFT)
   - LA(DOWN)
   - LA(UP)
@@ -112,11 +112,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - UNDO
-  - CUT
-  - COPY
-  - PASTE
-  - REDO
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
