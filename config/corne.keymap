@@ -12,10 +12,10 @@
   // 21 backlight + 6 glowlight
 };
 
-&mt {
-  tapping-term-ms = <200>;
-  flavor = "tap-preferred";
-};
+// &mt {
+//   tapping-term-ms = <200>;
+//   flavor = "tap-preferred";
+// };
 
 #define TAPPING_TERM 200
 
