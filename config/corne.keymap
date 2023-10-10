@@ -13,13 +13,8 @@
 };
 
 &mt {
-  tapping-term-ms = <150>;
+  tapping-term-ms = <200>;
   flavor = "tap-preferred";
-};
-
-&sk {
-  release-after-ms = <2000>;
-  quick-release;
 };
 
 #define TAPPING_TERM 200
@@ -32,7 +27,6 @@
     *  - tap twice for next track
     *  - tap three times for previous track
     */
-
     td_media: tap_dance_media {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_MEDIA";
@@ -46,7 +40,6 @@
     *  - tap once to lock the host
     *  - tap twice to put the host to sleep
     */
-
     td_lock: tap_dance_lock {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_LOCK";
