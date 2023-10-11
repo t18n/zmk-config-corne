@@ -103,8 +103,8 @@
       bindings = <
 &mt LEFT_ALT TAB  &kp Q  &kp W  &kp E         &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P      &kp MINUS
 &kp LSHIFT        &kp A  &kp S  &kp D         &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp ENTER
-                                &kp LEFT_GUI  &mo 2  &kp BSPC    &kp SPACE  &mo 1  &mo 2
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH  &mo 2
+                                &kp LEFT_GUI  &mo 2  &kp BSPC    &kp SPACE  &mo 1  &kp ENTER
       >;
     };
 
@@ -121,10 +121,10 @@
     nav_layer {
       label = "NAV";
       bindings = <
-&kp ESC        &trans  &kp LG(LEFT_BRACKET)  &kp LS(LG(TAB))  &kp LG(TAB)  &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)      &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
-&trans         &trans  &kp HOME              &kp PG_DN        &kp PG_UP    &kp END                  &kp LEFT          &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
-&kp LG(GRAVE)  &trans  &trans                &trans           &trans       &trans                   &kp LG(LEFT)      &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
-                                             &trans           &trans       &kp DELETE               &kp LC(LS(LALT))  &trans        &trans
+&kp ESC  &trans  &kp LG(LEFT_BRACKET)  &trans     &trans     &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)      &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+&trans   &trans  &kp HOME              &kp PG_DN  &kp PG_UP  &kp END                  &kp LEFT          &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&trans   &trans  &trans                &trans     &trans     &trans                   &kp LG(LEFT)      &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
+                                       &trans     &trans     &kp DELETE               &kp LC(LS(LALT))  &trans        &trans
       >;
     };
 
