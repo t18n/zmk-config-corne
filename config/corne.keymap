@@ -27,6 +27,7 @@
     *  - tap twice for next track
     *  - tap three times for previous track
     */
+
     td_media: tap_dance_media {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_MEDIA";
@@ -40,6 +41,7 @@
     *  - tap once to lock the host
     *  - tap twice to put the host to sleep
     */
+
     td_lock: tap_dance_lock {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_LOCK";
@@ -55,6 +57,26 @@
     Clear_BLE_Profile {
       bindings = <&bt BT_CLR>;
       key-positions = <0 38 5>;
+    };
+
+    Layer_3 {
+      bindings = <&mo 3>;
+      key-positions = <41 40>;
+    };
+
+    Layer_3.2 {
+      bindings = <&mo 3>;
+      key-positions = <36 37>;
+    };
+
+    Space {
+      bindings = <&kp SPACE>;
+      key-positions = <29 28>;
+    };
+
+    Enter {
+      bindings = <&kp ENTER>;
+      key-positions = <17 16>;
     };
   };
 
@@ -79,30 +101,30 @@
     base_layer {
       label = "BASE";
       bindings = <
-&mt LEFT_ALT TAB  &kp Q    &kp W  &kp E         &kp R        &kp T       &kp Y                   &kp U        &kp I                &kp O    &kp P        &mt RIGHT_ALT MINUS
-&kp LSHIFT        &kp A    &kp S  &kp D         &kp F        &kp G       &kp H                   &kp J        &kp K                &kp L    &kp SEMI     &mt RIGHT_SHIFT SINGLE_QUOTE
-&mt LCTRL GRAVE   &lt 3 Z  &kp X  &kp C         &kp V        &lt 1 B     &lt 2 N                 &kp M        &kp COMMA            &kp DOT  &lt 3 SLASH  &mt RCTRL BACKSLASH
-                                  &kp LEFT_GUI  &lt 2 SPACE  &kp BSPC    &mt LC(LS(LALT)) SPACE  &lt 1 EQUAL  &mt RIGHT_GUI ENTER
+&mt LEFT_ALT TAB  &kp Q  &kp W  &kp E         &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P      &kp MINUS
+&kp LSHIFT        &kp A  &kp S  &kp D         &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp ENTER
+                                &kp LEFT_GUI  &mo 2  &kp BSPC    &kp SPACE  &mo 1  &mo 2
       >;
     };
 
-    num_layer {
-      label = "NUMBER";
+    symbols_layer {
+      label = "SYMBOLS";
       bindings = <
-&kp ESC   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &trans
-&kp CAPS  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END        &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans    &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans     &trans  &trans
-                          &trans  &trans  &kp DELETE    &trans    &trans     &trans
+&kp ESC    &kp N1         &kp N2  &kp N3    &kp N4    &kp N5        &kp N6            &kp N7             &kp N8          &kp N9           &kp N0     &kp LEFT_ALT
+&kp CAPS   &kp EXCL       &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR   &kp RSHIFT
+&kp GRAVE  &kp BACKSLASH  &trans  &trans    &trans    &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp EQUAL  &kp RCTRL
+                                  &trans    &trans    &kp DELETE    &kp LC(LS(LALT))  &trans             &kp RIGHT_GUI
       >;
     };
 
-    code_layer {
-      label = "CODE";
+    nav_layer {
+      label = "NAV";
       bindings = <
-&kp ESC  &kp EXCL  &kp AT          &kp HASH         &kp DLLR          &kp PRCNT            &kp CARET     &kp AMPS      &kp ASTERISK  &kp LPAR       &kp RPAR  &trans
-&trans   &trans    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)    &kp LA(RIGHT)  &trans    &trans
-&trans   &trans    &trans          &trans           &trans            &trans               &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)    &kp LG(RIGHT)         &trans    &trans
-                                   &trans           &trans            &kp DELETE           &trans        &trans        &trans
+&kp ESC        &trans  &kp LG(LEFT_BRACKET)  &kp LS(LG(TAB))  &kp LG(TAB)  &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)      &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+&trans         &trans  &kp HOME              &kp PG_DN        &kp PG_UP    &kp END                  &kp LEFT          &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&kp LG(GRAVE)  &trans  &trans                &trans           &trans       &trans                   &kp LG(LEFT)      &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
+                                             &trans           &trans       &kp DELETE               &kp LC(LS(LALT))  &trans        &trans
       >;
     };
 
