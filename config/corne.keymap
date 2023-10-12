@@ -18,6 +18,8 @@
 // };
 
 #define TAPPING_TERM 200
+#define K_EMOJI LC(LG(SPACE))
+#define K_HYPER LC(LS(LALT))
 
 / {
   behaviors {
@@ -78,6 +80,11 @@
       bindings = <&kp ENTER>;
       key-positions = <17 16>;
     };
+
+    Capslock {
+      bindings = <&kp CLCK>;
+      key-positions = <5 6>;
+    };
   };
 
   macros {
@@ -101,30 +108,30 @@
     base_layer {
       label = "BASE";
       bindings = <
-&mt LEFT_ALT TAB  &kp Q  &kp W  &kp E         &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P      &kp MINUS
-&kp LSHIFT        &kp A  &kp S  &kp D         &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH  &mo 2
-                                &kp LEFT_GUI  &mo 2  &kp BSPC    &kp SPACE  &mo 1  &kp ENTER
+&mt LEFT_ALT TAB  &kp Q  &kp W  &kp E         &kp R  &kp T       &kp Y                   &kp U  &kp I      &kp O    &kp P      &kp MINUS
+&kp LSHIFT        &kp A  &kp S  &kp D         &kp F  &kp G       &kp H                   &kp J  &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V  &kp B       &kp N                   &kp M  &kp COMMA  &kp DOT  &kp SLASH  &mo 2
+                                &kp LEFT_GUI  &mo 2  &kp BSPC    &mt K_HYPER SPACE  &mo 1  &kp ENTER
       >;
     };
 
     symbols_layer {
       label = "SYMBOLS";
       bindings = <
-&kp ESC    &kp N1         &kp N2  &kp N3    &kp N4    &kp N5        &kp N6            &kp N7             &kp N8          &kp N9           &kp N0     &kp LEFT_ALT
-&kp CAPS   &kp EXCL       &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR   &kp RSHIFT
-&kp GRAVE  &kp BACKSLASH  &trans  &trans    &trans    &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp EQUAL  &kp RCTRL
-                                  &trans    &trans    &kp DELETE    &kp LC(LS(LALT))  &trans             &kp RIGHT_GUI
+&kp ESC    &kp N1         &kp N2       &kp N3           &kp N4    &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0     &trans
+&trans     &kp EXCL       &kp AT       &kp HASH         &kp DLLR  &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR   &trans
+&kp GRAVE  &kp BACKSLASH  &git_status  &git_commit_all  &trans    &trans       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp EQUAL  &trans
+                                       &trans           &trans    &trans       &trans            &trans             &trans
       >;
     };
 
     nav_layer {
       label = "NAV";
       bindings = <
-&kp ESC  &trans  &kp LG(LEFT_BRACKET)  &trans     &trans     &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)      &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
-&trans   &trans  &kp HOME              &kp PG_DN  &kp PG_UP  &kp END                  &kp LEFT          &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
-&trans   &trans  &trans                &trans     &trans     &trans                   &kp LG(LEFT)      &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
-                                       &trans     &trans     &kp DELETE               &kp LC(LS(LALT))  &trans        &trans
+&kp ESC        &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)       &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+&trans         &trans  &trans                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &trans                   &kp LEFT           &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&kp LG(GRAVE)  &trans  &kp HOME              &kp PG_DN          &kp PG_UP        &kp END                  &kp LG(LEFT)       &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
+                                             &trans             &trans           &trans                   &kp K_EMOJI  &trans        &trans
       >;
     };
 
