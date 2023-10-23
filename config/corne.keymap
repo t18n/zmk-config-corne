@@ -51,17 +51,17 @@
     };
     td_layers_123: tap_dance_layers_123 {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_LAYERS_123";
+      label = "TAP_DANCE_LAYERS_12";
       #binding-cells = <0>;
       tapping-term-ms = <TAPPING_TERM>;
-      bindings = <&mo 1>, <&mo 2>, <&mo 3>;
+      bindings = <&mo 1>, <&mo 2>;
     };
     td_layers_213: tap_dance_layers_213 {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_LAYERS_213";
+      label = "TAP_DANCE_LAYERS_21";
       #binding-cells = <0>;
       tapping-term-ms = <TAPPING_TERM>;
-      bindings = <&mo 2>, <&mo 1>, <&mo 3>;
+      bindings = <&mo 2>, <&mo 1>;
     };
   };
 
@@ -93,7 +93,7 @@
     git_status: git_status {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp G &kp I &kp T &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp ENTER>;
+      bindings = <&kp G &kp I &kp T &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S>;
       label = "GIT_STATUS";
     };
     git_commit_all: git_commit_all {
@@ -110,30 +110,30 @@
     base_layer {
       label = "BASE";
       bindings = <
-&mt LEFT_ALT TAB  &kp Q  &kp W  &kp E         &kp R           &kp T       &kp Y              &kp U           &kp I      &kp O    &kp P      &kp MINUS
-&kp LSHIFT        &kp A  &kp S  &kp D         &kp F           &kp G       &kp H              &kp J           &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V           &kp B       &kp N              &kp M           &kp COMMA  &kp DOT  &kp SLASH  &kp EQUAL
-                                &kp LEFT_GUI  &td_layers_213  &kp BSPC    &mt LC(LS(LALT)) SPACE  &td_layers_123  &kp ENTER
+&mt LC(LS(LALT)) TAB  &kp Q  &kp W  &kp E         &kp R           &kp T       &kp Y      &kp U           &kp I      &kp O    &kp P      &kp MINUS
+&kp LSHIFT            &kp A  &kp S  &kp D         &kp F           &kp G       &kp H      &kp J           &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
+&kp LEFT_CONTROL      &kp Z  &kp X  &kp C         &kp V           &kp B       &kp N      &kp M           &kp COMMA  &kp DOT  &kp SLASH  &kp LEFT_ALT
+                                    &kp LEFT_GUI  &td_layers_213  &kp BSPC    &kp SPACE  &td_layers_123  &kp ENTER
       >;
     };
 
     symbols_layer {
       label = "SYMBOLS";
       bindings = <
-&kp ESC    &kp N1    &kp N2       &kp N3           &kp N4    &kp N5       &kp N6            &kp N7             &kp N8          &kp N9           &kp N0         &trans
-&trans     &kp EXCL  &kp AT       &kp HASH         &kp DLLR  &kp PRCNT    &kp CARET         &kp AMPS           &kp ASTERISK    &kp LPAR         &kp RPAR       &trans
-&kp GRAVE  &trans    &git_status  &git_commit_all  &trans    &trans       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
-                                  &trans           &trans    &trans       &trans            &trans             &trans
+&kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR          &kp RPAR           &trans
+&trans   &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &trans     &kp EQUAL  &kp GRAVE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&trans   &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &trans     &kp PLUS   &kp TILDE     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE
+                           &trans    &trans    &trans       &trans     &trans     &trans
       >;
     };
 
     nav_layer {
       label = "NAV";
       bindings = <
-&kp ESC        &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
-&trans         &trans  &trans                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &trans                   &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
-&kp LG(GRAVE)  &trans  &kp HOME              &kp PG_DN          &kp PG_UP        &kp END                  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
-                                             &trans             &trans           &trans                   &kp LC(LG(SPACE))   &trans        &trans
+&kp ESC          &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)       &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+&trans           &trans  &trans                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &trans                   &kp LEFT           &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&kp LG(LC(TAB))  &trans  &kp HOME              &kp PG_DN          &kp PG_UP        &kp END                  &kp LG(LEFT)       &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
+                                               &trans             &trans           &trans                   &kp LC(LG(SPACE))  &trans        &trans
       >;
     };
 
@@ -145,6 +145,15 @@
 &trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7           &kp F8           &kp F9                &kp F10               &kp F12
                                     &trans        &trans        &trans          &trans           &trans           &trans
       >;
+    };
+  };
+
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+
+    Activate_EXT {
+      if-layers = <1 2>;
+      then-layer = <3>;
     };
   };
 };
