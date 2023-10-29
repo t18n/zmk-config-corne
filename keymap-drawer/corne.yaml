@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   BASE:
-  - {t: TAB, h: LEFT ALT}
+  - {t: TAB, h: LC(LS(LALT))}
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - {t: '-', h: RIGHT ALT}
-  - {t: ESCAPE, h: LSHFT}
+  - '-'
+  - LSHIFT
   - A
   - S
   - D
@@ -24,26 +24,26 @@ layers:
   - K
   - L
   - ;
-  - {t: '''', h: RIGHT SHIFT}
-  - {t: '`', h: LCTRL}
-  - {t: Z, h: EXT}
+  - ''''
+  - LEFT CONTROL
+  - Z
   - X
   - C
   - V
-  - {t: B, h: NUMBER}
-  - {t: N, h: CODE}
+  - B
+  - N
   - M
   - ','
   - .
-  - {t: /, h: EXT}
-  - {t: \, h: RCTRL}
+  - /
+  - LEFT ALT
   - LEFT GUI
-  - {t: SPACE, h: CODE}
+  - NAV
   - BSPC
-  - {t: SPACE, h: LC(LS(LALT))}
-  - {t: '=', h: NUMBER}
-  - {t: ENTER, h: RIGHT GUI}
-  NUMBER:
+  - SPACE
+  - SYMBOLS
+  - ENTER
+  SYMBOLS:
   - {t: ▽, type: trans}
   - '1'
   - '2'
@@ -56,38 +56,7 @@ layers:
   - '9'
   - '0'
   - {t: ▽, type: trans}
-  - CAPS
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - HOME
-  - PG DN
-  - PG UP
-  - END
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  CODE:
-  - {t: ▽, type: trans}
+  - ESC
   - '!'
   - '@'
   - '#'
@@ -100,18 +69,16 @@ layers:
   - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '{'
-  - '}'
+  - '`'
+  - '~'
+  - '|'
+  - '='
+  - +
   - '['
   - ']'
-  - LA(LEFT)
-  - LA(DOWN)
-  - LA(UP)
-  - LA(RIGHT)
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '{'
+  - '}'
+  - \
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -119,43 +86,52 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  NAV:
+  - LG(LC(TAB))
+  - {t: ▽, type: trans}
+  - LG(LEFT BRACKET)
+  - LS(TAB)
+  - TAB
+  - LG(RIGHT BRACKET)
+  - LA(LEFT)
+  - LA(DOWN)
+  - LA(UP)
+  - LA(RIGHT)
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ESC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SCROLL DOWN
+  - SCROLL UP
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - LG(LEFT)
+  - LG(DOWN)
+  - LG(UP)
+  - LG(RIGHT)
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - DELETE
   - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - LC(LG(SPACE))
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   EXT:
   - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - RGB HUD
-  - RGB HUI
-  - RGB SPD
-  - RGB SPI
-  - RGB EFF
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&td_media'
-  - MUTE
-  - VOL DN
-  - VOL UP
-  - RGB TOG
-  - RGB BRD
-  - RGB BRI
-  - BRIGHTNESS DEC
-  - BRIGHTNESS INC
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: F1, type: held}
+  - F1
   - F2
   - F3
   - F4
@@ -166,12 +142,42 @@ layers:
   - F9
   - F10
   - F12
+  - PP
+  - PREV
+  - NEXT
+  - MUTE
+  - VOL DN
+  - VOL UP
+  - BRIGHTNESS DEC
+  - BRIGHTNESS INC
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
 combos:
 - p: [0, 38, 5]
   k: BT CLR
+- p: [29, 28]
+  k: SPACE
+- p: [17, 16]
+  k: ENTER
+- p: [5, 6]
+  k: CLCK
