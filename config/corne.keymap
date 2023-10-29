@@ -17,7 +17,7 @@
 };
 
 &mmv {
-   time-to-max-speed-ms = <680>;
+   time-to-max-speed-ms = <680>;  /* <--- How long time until max speed is reached */
    acceleration-exponent=<2>;
 };
 
