@@ -2,9 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
-
-// dt-formatter: indent = "  "
-// dt-formatter: reindentMultilineIntegerCells = "dedent"
+#include <dt-bindings/zmk/mouse.h>
 
 &led_strip {
   chain-length = <27>;
@@ -12,15 +10,32 @@
   // 21 backlight + 6 glowlight
 };
 
-// &mt {
-//   tapping-term-ms = <200>;
-//   flavor = "tap-preferred";
-// };
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+&mmv {
+   time-to-max-speed-ms = <680>;
+   acceleration-exponent=<2>;
+};
+
 
 #define TAPPING_TERM 200
 
 / {
   behaviors {
+    hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
+    
     /*
     * td_media mimics the behavior of AirPods controls:
     *  - tap once for play / pause
@@ -48,20 +63,6 @@
       #binding-cells = <0>;
       tapping-term-ms = <TAPPING_TERM>;
       bindings = <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
-    };
-    td_layers_123: tap_dance_layers_123 {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_LAYERS_12";
-      #binding-cells = <0>;
-      tapping-term-ms = <TAPPING_TERM>;
-      bindings = <&mo 1>, <&mo 2>;
-    };
-    td_layers_213: tap_dance_layers_213 {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_LAYERS_21";
-      #binding-cells = <0>;
-      tapping-term-ms = <TAPPING_TERM>;
-      bindings = <&mo 2>, <&mo 1>;
     };
   };
 
@@ -111,18 +112,18 @@
       label = "BASE";
       bindings = <
 &mt LC(LS(LALT)) TAB  &kp Q  &kp W  &kp E         &kp R           &kp T       &kp Y      &kp U           &kp I      &kp O    &kp P      &kp MINUS
-&kp LSHIFT            &kp A  &kp S  &kp D         &kp F           &kp G       &kp H      &kp J           &kp K      &kp L    &kp SEMI   &kp SINGLE_QUOTE
-&kp LEFT_CONTROL      &kp Z  &kp X  &kp C         &kp V           &kp B       &kp N      &kp M           &kp COMMA  &kp DOT  &kp SLASH  &kp LEFT_ALT
-                                    &kp LEFT_GUI  &td_layers_213  &kp BSPC    &kp SPACE  &td_layers_123  &kp ENTER
+&kp EQUAL            &hm LGUI A &hm LALT S &hm LCTRL D          &kp F           &kp G       &kp H      &kp J          &hm LCTRL K &hm LALT L &hm LGUI SEMI   &kp SINGLE_QUOTE
+&kp GRAVE      &kp Z  &kp X  &kp C         &kp V           &kp B       &kp N      &kp M           &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSLASH
+                                    &kp LSHIFT  &mo 2  &kp BSPC    &kp SPACE  &mo 1  &kp ENTER
       >;
     };
 
     symbols_layer {
       label = "SYMBOLS";
       bindings = <
-&kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR          &kp RPAR           &trans
-&trans   &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &trans     &kp EQUAL  &kp GRAVE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans   &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &trans     &kp PLUS   &kp TILDE     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PIPE
+&kp LG(LC(TAB))   &kp N1    &kp N2  &kp N3    &kp N4    &kp N5         &kp N6    &kp N7  &kp N8    &kp N9    &kp N0    &trans
+&kp ESC  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK   &kp LPAR          &kp RPAR        &trans    
+&trans   &trans    &trans  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LEFT_BRACE    &kp RIGHT_BRACE  &trans  &trans    &trans  &trans
                            &trans    &trans    &trans       &trans     &trans     &trans
       >;
     };
@@ -130,9 +131,9 @@
     nav_layer {
       label = "NAV";
       bindings = <
-&kp ESC          &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)       &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
-&trans           &trans  &trans                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &trans                   &kp LEFT           &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
-&kp LG(LC(TAB))  &trans  &kp HOME              &kp PG_DN          &kp PG_UP        &kp END                  &kp LG(LEFT)       &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
+&kp LG(LC(TAB))          &trans  &kp LG(LEFT_BRACKET)  &kp LS(TAB)        &kp TAB          &kp LG(RIGHT_BRACKET)    &kp LA(LEFT)       &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &kp PG_DN  &kp PG_UP
+&kp ESC           &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT              &kp LEFT           &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&trans  &trans &kp K_SCROLL_LEFT                &kp K_SCROLL_DOWN  &kp K_SCROLL_UP  &kp K_SCROLL_RIGHT                  &kp LG(LEFT)       &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &kp HOME  &kp END
                                                &trans             &trans           &trans                   &kp LC(LG(SPACE))  &trans        &trans
       >;
     };
@@ -140,9 +141,9 @@
     extended_layer {
       label = "EXT";
       bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI       &rgb_ug RGB_EFF       &trans
-&trans  &trans        &td_media     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans
 &trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7           &kp F8           &kp F9                &kp F10               &kp F12
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI       &rgb_ug RGB_EFF       &rgb_ug RGB_TOG
+&kp C_PP &kp C_PREV  &kp C_NEXT     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &trans &trans
                                     &trans        &trans        &trans          &trans           &trans           &trans
       >;
     };
